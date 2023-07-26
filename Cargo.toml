@@ -1,0 +1,25 @@
+[package]
+name = "futuapi"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+from_into_derive = {path = "./from_into_derive"}
+anyhow="*"
+prost = "^0.11"
+bytes = "*"
+log = "*"
+time = "0.3"
+# downcast-rs = "*"
+rust-crypto = "*"
+# parking_lot = "*"
+# futures = "*"
+tokio = {version = "*", features = ["time", "net", "io-util", "sync", "macros", "rt-multi-thread"]}
+
+[dev-dependencies]
+simple_logger = {version = ">=4.2", features = ["timestamps"] }
+
+[build-dependencies]
+prost-build = "^0.11"

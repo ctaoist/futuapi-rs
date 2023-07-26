@@ -1,0 +1,6 @@
+/src/pb/*
+!/src/pb/mod.rs
+!/src/pb/protocol.proto
+/target
+/Cargo.lock
+/from_into_derive/target

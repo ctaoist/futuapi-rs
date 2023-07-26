@@ -1,0 +1,89 @@
+syntax = "proto2";
+package Protocol;
+
+import "Common.proto";
+
+enum ProtoID {
+  None = 0;                   // 
+  InitConnect = 1001;         // 初始化连接
+  GetGlobalState = 1002;      // 获取全局状态
+  Notify = 1003;              // 通知推送
+  KeepAlive = 1004;           // 心跳保活
+  GetUserInfo = 1005;         // 获取用户信息
+  Verification = 1006;        // 请求或输入验证码
+  GetDelayStatistics = 1007;  // 获取延迟统计
+  TestCmd = 1008;
+  InitQuantMode = 1009;
+
+  TrdGetAccList = 2001;   // 获取业务账户列表
+  TrdUnlockTrade = 2005;  // 解锁或锁定交易
+  TrdSubAccPush = 2008;   // 订阅业务账户的交易推送数据
+
+  TrdGetFunds = 2101;         // 获取账户资金
+  TrdGetPositionList = 2102;  // 获取账户持仓
+
+  TrdGetOrderList = 2201;  // 获取订单列表
+  TrdPlaceOrder = 2202;    // 下单
+  TrdModifyOrder = 2205;   // 修改订单
+  TrdUpdateOrder = 2208;   // 订单状态变动通知(推送)
+
+  TrdGetOrderFillList = 2211;  // 获取成交列表
+  TrdUpdateOrderFill = 2218;   // 成交通知(推送)
+
+  TrdGetHistoryOrderList = 2221;      // 获取历史订单列表
+  TrdGetHistoryOrderFillList = 2222;  // 获取历史成交列表
+  TrdGetMaxTrdQtys = 2111;            // 查询最大买卖数量
+  TrdGetMarginRatio = 2223;           // 获取融资融券数据
+
+  // 订阅数据
+  QotSub = 3001;                  // 订阅或者反订阅
+  QotRegQotPush = 3002;           // 注册推送
+  QotGetSubInfo = 3003;           // 获取订阅信息
+  QotGetBasicQot = 3004;          // 获取股票基本行情
+  QotUpdateBasicQot = 3005;       // 推送股票基本行情
+  QotGetKL = 3006;                // 获取K线
+  QotUpdateKL = 3007;             // 推送K线
+  QotGetRT = 3008;                // 获取分时
+  QotUpdateRT = 3009;             // 推送分时
+  QotGetTicker = 3010;            // 获取逐笔
+  QotUpdateTicker = 3011;         // 推送逐笔
+  QotGetOrderBook = 3012;         // 获取买卖盘
+  QotUpdateOrderBook = 3013;      // 推送买卖盘
+  QotGetBroker = 3014;            // 获取经纪队列
+  QotUpdateBroker = 3015;         // 推送经纪队列
+  QotUpdatePriceReminder = 3019;  //到价提醒通知
+
+  // 历史数据
+  QotRequestHistoryKL = 3103;       // 拉取历史K线
+  QotRequestHistoryKLQuota = 3104;  // 拉取历史K线已经用掉的额度
+  QotRequestRehab = 3105;           // 获取除权信息
+
+  // 其他行情数据
+  QotGetSuspend = 3201;           // 获取股票停牌信息
+  QotGetStaticInfo = 3202;        // 获取股票列表
+  QotGetSecuritySnapshot = 3203;  // 获取股票快照
+  QotGetPlateSet = 3204;          // 获取板块集合下的板块
+  QotGetPlateSecurity = 3205;     // 获取板块下的股票
+  QotGetReference = 3206;   // 获取正股相关股票，暂时只有窝轮
+  QotGetOwnerPlate = 3207;  // 获取股票所属板块
+  QotGetHoldingChangeList = 3208;  // 获取高管持股变动
+  QotGetOptionChain = 3209;        // 获取期权链
+
+  QotGetWarrant = 3210;              // 拉取窝轮信息
+  QotGetCapitalFlow = 3211;          // 获取资金流向
+  QotGetCapitalDistribution = 3212;  // 获取资金分布
+
+  QotGetUserSecurity = 3213;     // 获取自选股分组下的股票
+  QotModifyUserSecurity = 3214;  // 修改自选股分组下的股票
+  QotStockFilter = 3215;         // 条件选股
+  QotGetCodeChange = 3216;       // 代码变换
+  QotGetIpoList = 3217;          // 获取新股Ipo
+  QotGetFutureInfo = 3218;       // 获取期货资料
+  QotRequestTradeDate = 3219;    // 在线拉取交易日
+  QotSetPriceReminder = 3220;    // 设置到价提醒
+  QotGetPriceReminder = 3221;    // 获取到价提醒
+
+  QotGetUserSecurityGroup = 3222;     // 获取自选股分组
+  QotGetMarketState = 3223;           // 获取指定品种的市场状态
+  QotGetOptionExpirationDate = 3224;  // 获取期权到期日
+}
